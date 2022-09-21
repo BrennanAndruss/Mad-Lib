@@ -22,7 +22,7 @@ public class Main {
         userInput = sc.nextLine();
 
         // replace with user input
-        madLib.replace(partOfSpeech, userInput);
+        // madLib.replace(partOfSpeech, userInput);
 
         System.out.println(madLib);
     }
