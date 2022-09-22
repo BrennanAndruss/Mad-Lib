@@ -4,26 +4,47 @@ public class Main {
     public static void main(String[] args) {
         // initialize variables
         Scanner sc = new Scanner(System.in);
-        String madLib = "I went to the animal <noun>, the <plural_noun> and the <number> beasts were there.";
-        // String madLib = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
-        // String madLib = 
-        int i1 = 0;
-        int i2 = 0;
+        
+        // String oldMadLib = "I went to the animal <noun>, the <plural_noun> and the <number> beasts were there.";
+        // String oldMadLib = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
+        String oldMadLib = "The <adjective> fox <past_tense_verb> over the lazy <noun>.";
+        String newMadLib = "";
+
+        int i1 = 0; // beginning index
+        int i2 = -1; // ending index
+
         String partOfSpeech;
         String userInput;
 
-        // parse to find part of speech
-        i1 = madLib.indexOf("<");
-        i2 = madLib.indexOf(">");
-        partOfSpeech = madLib.substring(i1 + 1, i2);
+        // create new mad lib with three user inputs
+        for (int i = 0; i < 3; i++) {
+            // parse to find section to include
+            i1 = i2 + 1; // beginning of included section
+            i2 = oldMadLib.indexOf("<", i1 + 1); // end of included section, stops at part of speech
 
-        // prompt user
-        System.out.println("Enter a " + partOfSpeech + ": ");
-        userInput = sc.nextLine();
+            newMadLib += oldMadLib.substring(i1, i2);
 
-        // replace with user input
-        // madLib.replace(partOfSpeech, userInput);
+            // parse to find part of speech
+            i1 = i2 + 1; // beginning of part of speech
+            i2 = oldMadLib.indexOf(">", i1); // end of part of speech
 
-        System.out.println(madLib);
+            partOfSpeech = oldMadLib.substring(i1, i2);
+            
+            // prompt user
+            System.out.print("Enter a " + partOfSpeech + ": ");
+            userInput = sc.nextLine();
+
+            // add user input
+            newMadLib += userInput;
+        }
+
+        // parse to find last section to include
+        i1 = i2 + 1;
+        i2 = oldMadLib.length();
+
+        newMadLib += oldMadLib.substring(i1, i2);
+
+        // print final mad lib
+        System.out.println(newMadLib);
     }
 }
