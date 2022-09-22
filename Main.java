@@ -1,3 +1,12 @@
+/*
+Mad Libs
+Brennan and Anchal
+9/22/2022
+AP Computer Science A Trimester 1 Woldseth
+
+Description: Creates a mad lib with three blanks
+*/
+
 import java.util.Scanner;
 
 public class Main {
