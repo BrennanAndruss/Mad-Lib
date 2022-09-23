@@ -14,9 +14,9 @@ public class Main {
         // initialize variables
         Scanner sc = new Scanner(System.in);
         
-        // String oldMadLib = "I went to the animal <noun>, the <plural_noun> and the <number> beasts were there.";
+        // String oldMadLib = "I went to the animal <noun>, the <plural noun> and the <number> beasts were there.";
         // String oldMadLib = "Once upon a time in a <adjective> land, a <noun> <adverb> grew.";
-        String oldMadLib = "The <adjective> fox <past_tense_verb> over the lazy <noun>.";
+        String oldMadLib = "The <adjective> fox <past tense verb> over the lazy <noun>.";
         String newMadLib = "";
 
         int i1 = 0; // beginning index
@@ -39,7 +39,7 @@ public class Main {
 
             partOfSpeech = oldMadLib.substring(i1, i2);
             
-            // prompt user
+            // prompt user for user input
             System.out.print("Enter a " + partOfSpeech + ": ");
             userInput = sc.nextLine();
 
